@@ -1,0 +1,31 @@
+﻿@page
+@model WebApplication1.Pages.ChatClientModel
+@{
+    ViewData["Title"] = "ChatClient";
+}
+
+<h2>Welcome to ChatClient</h2>
+
+Clientstatus: @Model.ClientStatus<br>
+
+Chatbox:<br>
+@{
+    foreach (string element in Model.ChatSession)
+    {
+        WriteLiteral(element);
+        <br>
+    }
+}
+
+
+<form method="post">
+    Chatmessage: <input type="text" name="chatMsg"><br>
+    <input type="submit" value="Send string" onclick="post"/>
+</form>
+
+<form method="post">
+    <div asp-validation-summary="All"></div>
+    <div>Name: <input asp-for="Customer.Name" /></div>
+
+    <input type="submit" />
+</form>

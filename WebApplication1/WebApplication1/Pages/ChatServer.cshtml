@@ -1,0 +1,21 @@
+﻿@page
+@model WebApplication1.Pages.ChatServerModel
+@{
+    ViewData["Title"] = "ChatServer";
+}
+
+<p>Welcome to the server:</p>
+
+<div>
+    Server is: @Model.ServerStatus
+
+    @Model.ChatContent
+</div>
+
+
+
+
+<form method="post">
+    <input type="submit" value="Start Server"/>
+</form>
+
